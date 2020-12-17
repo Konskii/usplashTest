@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D7D681CF67B251708DF1506 /* Pods_unsplashRMR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77243C4D976A2E36F62741C /* Pods_unsplashRMR.framework */; };
 		D2783D46258A587E00EFB475 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2783D45258A587E00EFB475 /* AppDelegate.swift */; };
 		D2783D4D258A587E00EFB475 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2783D4B258A587E00EFB475 /* Main.storyboard */; };
 		D2783D4F258A588000EFB475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2783D4E258A588000EFB475 /* Assets.xcassets */; };
@@ -21,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8AB7BC7AF6243D55CEA0E1CE /* Pods-unsplashRMR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unsplashRMR.debug.xcconfig"; path = "Target Support Files/Pods-unsplashRMR/Pods-unsplashRMR.debug.xcconfig"; sourceTree = "<group>"; };
+		C77243C4D976A2E36F62741C /* Pods_unsplashRMR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_unsplashRMR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9E32680A6E53592B52EE651 /* Pods-unsplashRMR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unsplashRMR.release.xcconfig"; path = "Target Support Files/Pods-unsplashRMR/Pods-unsplashRMR.release.xcconfig"; sourceTree = "<group>"; };
 		D2783D42258A587E00EFB475 /* unsplashRMR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = unsplashRMR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2783D45258A587E00EFB475 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2783D4C258A587E00EFB475 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -41,17 +45,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D7D681CF67B251708DF1506 /* Pods_unsplashRMR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20826B7DC6C53F3F5ED7D168 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C77243C4D976A2E36F62741C /* Pods_unsplashRMR.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8DE18403BD136ACC2F346122 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8AB7BC7AF6243D55CEA0E1CE /* Pods-unsplashRMR.debug.xcconfig */,
+				C9E32680A6E53592B52EE651 /* Pods-unsplashRMR.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D2783D39258A587E00EFB475 = {
 			isa = PBXGroup;
 			children = (
 				D2783D44258A587E00EFB475 /* unsplashRMR */,
 				D2783D43258A587E00EFB475 /* Products */,
+				8DE18403BD136ACC2F346122 /* Pods */,
+				20826B7DC6C53F3F5ED7D168 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,9 +170,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2783D56258A588000EFB475 /* Build configuration list for PBXNativeTarget "unsplashRMR" */;
 			buildPhases = (
+				6C6780D1CE0C6A840E29FD02 /* [CP] Check Pods Manifest.lock */,
 				D2783D3E258A587E00EFB475 /* Sources */,
 				D2783D3F258A587E00EFB475 /* Frameworks */,
 				D2783D40258A587E00EFB475 /* Resources */,
+				FA1FE54526CBAFB6836BA764 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -202,6 +229,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6C6780D1CE0C6A840E29FD02 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-unsplashRMR-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA1FE54526CBAFB6836BA764 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-unsplashRMR/Pods-unsplashRMR-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-unsplashRMR/Pods-unsplashRMR-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-unsplashRMR/Pods-unsplashRMR-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D2783D3E258A587E00EFB475 /* Sources */ = {
@@ -359,6 +428,7 @@
 		};
 		D2783D57258A588000EFB475 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AB7BC7AF6243D55CEA0E1CE /* Pods-unsplashRMR.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -378,6 +448,7 @@
 		};
 		D2783D58258A588000EFB475 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9E32680A6E53592B52EE651 /* Pods-unsplashRMR.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
