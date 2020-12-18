@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8D7D681CF67B251708DF1506 /* Pods_unsplashRMR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77243C4D976A2E36F62741C /* Pods_unsplashRMR.framework */; };
 		D262D30D258C825800FDD452 /* PhotoDetailsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D262D30C258C825800FDD452 /* PhotoDetailsHeader.swift */; };
+		D262D312258C9B8D00FDD452 /* CustomActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D262D311258C9B8D00FDD452 /* CustomActivityIndicator.swift */; };
 		D2783D46258A587E00EFB475 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2783D45258A587E00EFB475 /* AppDelegate.swift */; };
 		D2783D4D258A587E00EFB475 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2783D4B258A587E00EFB475 /* Main.storyboard */; };
 		D2783D4F258A588000EFB475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2783D4E258A588000EFB475 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 		C77243C4D976A2E36F62741C /* Pods_unsplashRMR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_unsplashRMR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E32680A6E53592B52EE651 /* Pods-unsplashRMR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unsplashRMR.release.xcconfig"; path = "Target Support Files/Pods-unsplashRMR/Pods-unsplashRMR.release.xcconfig"; sourceTree = "<group>"; };
 		D262D30C258C825800FDD452 /* PhotoDetailsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsHeader.swift; sourceTree = "<group>"; };
+		D262D311258C9B8D00FDD452 /* CustomActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActivityIndicator.swift; sourceTree = "<group>"; };
 		D2783D42258A587E00EFB475 /* unsplashRMR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = unsplashRMR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2783D45258A587E00EFB475 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2783D4C258A587E00EFB475 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				D2783D4B258A587E00EFB475 /* Main.storyboard */,
 				D2783D45258A587E00EFB475 /* AppDelegate.swift */,
 				D2783D7B258A844500EFB475 /* Alert.swift */,
+				D262D311258C9B8D00FDD452 /* CustomActivityIndicator.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D262D312258C9B8D00FDD452 /* CustomActivityIndicator.swift in Sources */,
 				D2783D74258A793000EFB475 /* PhotoModel.swift in Sources */,
 				D2783D7C258A844500EFB475 /* Alert.swift in Sources */,
 				D2783D67258A6D6300EFB475 /* NetworkManager.swift in Sources */,

@@ -28,9 +28,8 @@ class PhotoDetailsViewController: UIViewController {
         return view
     }()
     
-    private lazy var activityIndicator: UIActivityIndicatorView = {
-        let view = UIActivityIndicatorView(style: .large)
-        view.hidesWhenStopped = true
+    private lazy var activityIndicator: CustomActivityIndicator = {
+        let view = CustomActivityIndicator()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -134,8 +133,11 @@ extension PhotoDetailsViewController: UITableViewDelegate {
                 self.tableView.deselectRow(at: indexPath, animated: true)
                 return
             }
-            activityIndicator.startAnimating()
-            downloader.downloadImage(with: url, completionHandler:  { [weak self] result in
+            downloader.downloadImage(with: url, options: [], progressBlock: { [weak self] receivedSize, totalSize in
+                guard let self = self else { return }
+                self.activityIndicator.startAnimating()
+                self.activityIndicator.setMBytes(MBytes: Float(receivedSize) / 1024 / 1000, maxMBytes: Float(totalSize) / 1024 / 1000)
+            }, completionHandler: { [weak self] result in
                 guard let self = self else { return }
                 switch result {
                 case .failure(let error):
@@ -148,6 +150,7 @@ extension PhotoDetailsViewController: UITableViewDelegate {
                     self.tableView.deselectRow(at: indexPath, animated: true)
                 }
             })
+
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
