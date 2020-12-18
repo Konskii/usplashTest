@@ -9,9 +9,7 @@ import UIKit
 class MainViewController: UIViewController {
     //MARK: - UI Elements
     private lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.headerReferenceSize.height = view.bounds.height / 3
-        let view = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+        let view = UICollectionView(frame: self.view.frame, collectionViewLayout: UICollectionViewFlowLayout())
         view.register(MainViewControllerCell.self, forCellWithReuseIdentifier: MainViewControllerCell.reusedId)
         view.register(MainViewControllerHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MainViewControllerHeader.reusedId)
         view.dataSource = self
@@ -43,6 +41,10 @@ extension MainViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainViewControllerCell.reusedId, for: indexPath) as? MainViewControllerCell else { fatalError() }
         return cell
     }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        1
+    }
 }
 
 //MARK: - UICollectionViewDelegate
@@ -51,13 +53,29 @@ extension MainViewController: UICollectionViewDelegate {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: MainViewControllerHeader.reusedId, for: indexPath) as? MainViewControllerHeader else { fatalError() }
+            cell.serviceDelegate = self
             return cell
         default:
             fatalError()
         }
     }
+}
+
+//MARK: - UICollectionViewDelegateFlowLayout
+extension MainViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        CGSize(width: view.bounds.width, height: 200)
+    }
+}
+
+//MARK: - MainCellServiceProtocol
+extension MainViewController: MainCellServiceProtocol {
+    func showAlert(type: Alert.alertTypes, message: String) {
+        Alert.showAlert(vc: self, title: type, message: message)
+    }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        Alert.showAlert(vc: self, title: "test", message: "tes1")
+    func showDetailVC(photoModel: PhotoModel, image: UIImage) {
+        let vc = PhotoDetailsViewController(photoModel: photoModel, image: image)
+        present(vc, animated: true, completion: nil)
     }
 }

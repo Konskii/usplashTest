@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		8D7D681CF67B251708DF1506 /* Pods_unsplashRMR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77243C4D976A2E36F62741C /* Pods_unsplashRMR.framework */; };
+		D262D30D258C825800FDD452 /* PhotoDetailsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D262D30C258C825800FDD452 /* PhotoDetailsHeader.swift */; };
 		D2783D46258A587E00EFB475 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2783D45258A587E00EFB475 /* AppDelegate.swift */; };
 		D2783D4D258A587E00EFB475 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2783D4B258A587E00EFB475 /* Main.storyboard */; };
 		D2783D4F258A588000EFB475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2783D4E258A588000EFB475 /* Assets.xcassets */; };
@@ -19,12 +20,15 @@
 		D2783D74258A793000EFB475 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2783D73258A793000EFB475 /* PhotoModel.swift */; };
 		D2783D78258A799D00EFB475 /* UrlsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2783D77258A799D00EFB475 /* UrlsModel.swift */; };
 		D2783D7C258A844500EFB475 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2783D7B258A844500EFB475 /* Alert.swift */; };
+		D2BC7D6D258B52CE00577A71 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC7D6C258B52CE00577A71 /* Protocols.swift */; };
+		D2BC7D72258B5DAC00577A71 /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC7D71258B5DAC00577A71 /* PhotoDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8AB7BC7AF6243D55CEA0E1CE /* Pods-unsplashRMR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unsplashRMR.debug.xcconfig"; path = "Target Support Files/Pods-unsplashRMR/Pods-unsplashRMR.debug.xcconfig"; sourceTree = "<group>"; };
 		C77243C4D976A2E36F62741C /* Pods_unsplashRMR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_unsplashRMR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E32680A6E53592B52EE651 /* Pods-unsplashRMR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unsplashRMR.release.xcconfig"; path = "Target Support Files/Pods-unsplashRMR/Pods-unsplashRMR.release.xcconfig"; sourceTree = "<group>"; };
+		D262D30C258C825800FDD452 /* PhotoDetailsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsHeader.swift; sourceTree = "<group>"; };
 		D2783D42258A587E00EFB475 /* unsplashRMR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = unsplashRMR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2783D45258A587E00EFB475 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2783D4C258A587E00EFB475 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -38,6 +42,8 @@
 		D2783D73258A793000EFB475 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 		D2783D77258A799D00EFB475 /* UrlsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlsModel.swift; sourceTree = "<group>"; };
 		D2783D7B258A844500EFB475 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		D2BC7D6C258B52CE00577A71 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		D2BC7D71258B5DAC00577A71 /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +72,23 @@
 				8AB7BC7AF6243D55CEA0E1CE /* Pods-unsplashRMR.debug.xcconfig */,
 				C9E32680A6E53592B52EE651 /* Pods-unsplashRMR.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D262D30A258C824000FDD452 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D2BC7D71258B5DAC00577A71 /* PhotoDetailsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D262D30B258C824C00FDD452 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D262D30C258C825800FDD452 /* PhotoDetailsHeader.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		D2783D39258A587E00EFB475 = {
@@ -91,6 +112,7 @@
 		D2783D44258A587E00EFB475 /* unsplashRMR */ = {
 			isa = PBXGroup;
 			children = (
+				D2BC7D6B258B52BF00577A71 /* Protocols */,
 				D2783D60258A5D4F00EFB475 /* Network */,
 				D2783D61258A5D5C00EFB475 /* Models */,
 				D2783D5D258A58E400EFB475 /* Controllers */,
@@ -115,6 +137,7 @@
 		D2783D5D258A58E400EFB475 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D2BC7D70258B5D9300577A71 /* PhotoDetails */,
 				D2783D69258A716600EFB475 /* Main */,
 			);
 			path = Controllers;
@@ -157,10 +180,27 @@
 		D2783D6B258A717F00EFB475 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				D2783D70258A74BC00EFB475 /* MainViewControllerCell.swift */,
 				D2783D6C258A718E00EFB475 /* MainViewControllerHeader.swift */,
+				D2783D70258A74BC00EFB475 /* MainViewControllerCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		D2BC7D6B258B52BF00577A71 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D2BC7D6C258B52CE00577A71 /* Protocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D2BC7D70258B5D9300577A71 /* PhotoDetails */ = {
+			isa = PBXGroup;
+			children = (
+				D262D30A258C824000FDD452 /* Controller */,
+				D262D30B258C824C00FDD452 /* Cells */,
+			);
+			path = PhotoDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,10 +320,13 @@
 				D2783D74258A793000EFB475 /* PhotoModel.swift in Sources */,
 				D2783D7C258A844500EFB475 /* Alert.swift in Sources */,
 				D2783D67258A6D6300EFB475 /* NetworkManager.swift in Sources */,
+				D2BC7D6D258B52CE00577A71 /* Protocols.swift in Sources */,
 				D2783D71258A74BC00EFB475 /* MainViewControllerCell.swift in Sources */,
 				D2783D46258A587E00EFB475 /* AppDelegate.swift in Sources */,
+				D2BC7D72258B5DAC00577A71 /* PhotoDetailsViewController.swift in Sources */,
 				D2783D78258A799D00EFB475 /* UrlsModel.swift in Sources */,
 				D2783D6D258A718E00EFB475 /* MainViewControllerHeader.swift in Sources */,
+				D262D30D258C825800FDD452 /* PhotoDetailsHeader.swift in Sources */,
 				D2783D63258A5D8700EFB475 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +478,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 627VX4YTF5;
 				INFOPLIST_FILE = unsplashRMR/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,6 +499,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 627VX4YTF5;
 				INFOPLIST_FILE = unsplashRMR/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

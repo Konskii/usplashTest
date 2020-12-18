@@ -2,12 +2,11 @@
 //  NetworkManager.swift
 //  unsplashRMR
 //
-//  Created by Евгений Скрипкин on 16.12.2020.
+//  Created by Артём Скрипкин on 16.12.2020.
 //
 
 import Foundation
-import UIKit
-
+extension String: Error {}
 class NetworkManager {
     //TODO
     private let standartHeaders = ["Content-Type" : "application/json",
@@ -26,6 +25,8 @@ class NetworkManager {
     private let netwrokSession = URLSession.shared
     private init() {}
     
+    //MARK: - createBaseRequest
+    /// - Parameter path: путь по которому будет проходить запрос относительно хоста
     private func createBaseRequest(path: Paths) -> URLRequest? {
         guard var url = URL(string: Paths.hostPath.rawValue) else { return nil }
         url.appendPathComponent(path.rawValue)
@@ -34,8 +35,9 @@ class NetworkManager {
         return request
     }
     
-    //TODO Errors
-    public func getRandomPhoto(completion: @escaping (Result<UIImage, Error>) -> Void) {
+    //MARK: - getRandomPhoto:
+    /// - Parameter completion: замыкание, в котоое возвращается либо ошибка в случае неудачи и модель фотографии в случаее успеха
+    public func getRandomPhoto(completion: @escaping (Result<PhotoModel, Error>) -> Void) {
         guard let request = createBaseRequest(path: .randomPhotoPath) else { return }
         netwrokSession.dataTask(with: request) { data, response, error in
             if let error = error {
@@ -43,20 +45,14 @@ class NetworkManager {
                 return
             }
             
-            if let response = response as? HTTPURLResponse, response.statusCode == 200 {
-                guard let data = data else { print("getRandomData"); return }
-                guard let parsedData = try? JSONDecoder().decode(PhotoModel.self, from: data) else { print("parse"); return }
-                guard let url = URL(string: parsedData.urls.regular) else { print("url"); return }
-                self.netwrokSession.dataTask(with: url) { data, response, error in
-                    if let error = error {
-                        completion(.failure(error))
-                        return
-                    }
-                    if let data = data {
-                        guard let image = UIImage(data: data) else { return }
-                        completion(.success(image))
-                    }
-                }.resume()
+            guard let response = response as? HTTPURLResponse else { completion(.failure("response couldn't be casted")); return }
+            
+            if response.statusCode == 200 {
+                guard let data = data else { completion(.failure("data is nil")); return }
+                guard let photoModel = try? JSONDecoder().decode(PhotoModel.self, from: data) else { completion(.failure("parsing error")); return }
+                completion(.success(photoModel))
+            } else {
+                completion(.failure("\(response.statusCode)"))
             }
         }.resume()
     }

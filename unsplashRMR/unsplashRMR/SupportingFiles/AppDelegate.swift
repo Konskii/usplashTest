@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  unsplashRMR
 //
-//  Created by Евгений Скрипкин on 16.12.2020.
+//  Created by Артём Скрипкин on 16.12.2020.
 //
 
 import UIKit
