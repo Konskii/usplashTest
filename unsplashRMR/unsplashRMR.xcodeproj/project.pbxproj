@@ -23,6 +23,8 @@
 		D2783D7C258A844500EFB475 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2783D7B258A844500EFB475 /* Alert.swift */; };
 		D2BC7D6D258B52CE00577A71 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC7D6C258B52CE00577A71 /* Protocols.swift */; };
 		D2BC7D72258B5DAC00577A71 /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC7D71258B5DAC00577A71 /* PhotoDetailsViewController.swift */; };
+		D2E4D50E258F9A48005D1D88 /* PhotosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E4D50D258F9A48005D1D88 /* PhotosModel.swift */; };
+		D2E4D512258F9BE2005D1D88 /* PhotosListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E4D511258F9BE2005D1D88 /* PhotosListProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		D2783D7B258A844500EFB475 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		D2BC7D6C258B52CE00577A71 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		D2BC7D71258B5DAC00577A71 /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
+		D2E4D50D258F9A48005D1D88 /* PhotosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosModel.swift; sourceTree = "<group>"; };
+		D2E4D511258F9BE2005D1D88 /* PhotosListProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				D2783D66258A6D6300EFB475 /* NetworkManager.swift */,
+				D2E4D511258F9BE2005D1D88 /* PhotosListProvider.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 			children = (
 				D2783D73258A793000EFB475 /* PhotoModel.swift */,
 				D2783D77258A799D00EFB475 /* UrlsModel.swift */,
+				D2E4D50D258F9A48005D1D88 /* PhotosModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -328,6 +334,8 @@
 				D2783D71258A74BC00EFB475 /* MainViewControllerCell.swift in Sources */,
 				D2783D46258A587E00EFB475 /* AppDelegate.swift in Sources */,
 				D2BC7D72258B5DAC00577A71 /* PhotoDetailsViewController.swift in Sources */,
+				D2E4D50E258F9A48005D1D88 /* PhotosModel.swift in Sources */,
+				D2E4D512258F9BE2005D1D88 /* PhotosListProvider.swift in Sources */,
 				D2783D78258A799D00EFB475 /* UrlsModel.swift in Sources */,
 				D2783D6D258A718E00EFB475 /* MainViewControllerHeader.swift in Sources */,
 				D262D30D258C825800FDD452 /* PhotoDetailsHeader.swift in Sources */,

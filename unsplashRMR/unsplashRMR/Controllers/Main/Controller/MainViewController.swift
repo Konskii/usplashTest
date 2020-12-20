@@ -7,6 +7,9 @@
 
 import UIKit
 class MainViewController: UIViewController {
+    
+    private let dataSource = PhotosListProvider()
+    
     //MARK: - UI Elements
     private lazy var collectionView: UICollectionView = {
         let view = UICollectionView(frame: self.view.frame, collectionViewLayout: UICollectionViewFlowLayout())
@@ -24,26 +27,44 @@ class MainViewController: UIViewController {
         view.backgroundColor = .white
     }
     
+    private func loadPhotos() {
+        dataSource.fetchData() { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .failure(let error):
+                Alert.showAlert(vc: self, title: .error, message: "\(error)")
+            case .success(_):
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            }
+        }
+    }
+    
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        loadPhotos()
     }
 }
 
 //MARK: - UICollectionViewDataSource
 extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        1
+        print(dataSource.items.count)
+        return dataSource.items.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainViewControllerCell.reusedId, for: indexPath) as? MainViewControllerCell else { fatalError() }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainViewControllerCell.reusedId, for: indexPath)
+        
+        if let cell = cell as? MainViewControllerCell {
+            guard let photo = dataSource.item(at: indexPath.row) else { return cell }
+            cell.setPhoto(photo: photo)
+        }
+        
         return cell
-    }
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        1
     }
 }
 
